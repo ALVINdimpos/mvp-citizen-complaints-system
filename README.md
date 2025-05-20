@@ -1,20 +1,20 @@
-# Citizen Complaints and Engagement System
+# mvp-citizen-complaints-system
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nishimweprince/complaints)
+<!-- [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nishimweprince/complaints) -->
 
 A full-stack application for managing citizen complaints and engagement, featuring AI-powered ticket routing, real-time analytics, and comprehensive audit logging.
 
 ## 📱 Live Demo
-- **Live URL**: [https://complaints.basis.rw](https://complaints.basis.rw)
+<!-- - **Live URL**: [https://complaints.basis.rw](https://complaints.basis.rw)
 - **Demo Video**: [Google Drive](https://drive.google.com/drive/folders/1xUkTTlyH-oFf-LHbOszWEDcDhyo1Oh2P?usp=sharing)
-- **Technical Documentation**: [Citizen Complaints and Engagement System](https://deepwiki.com/nishimweprince/complaints)
+- **Technical Documentation**: [Citizen Complaints and Engagement System](https://deepwiki.com/nishimweprince/complaints) -->
 
 ## 🏗️ Project Structure
 
 ```
-complaints/
-├── complaints-fe/    # Frontend application (React + TypeScript + Vite)
-└── complaints-be/    # Backend service (Node.js + Express + TypeScript)
+mvp-citizen-complaints-system/
+├── frontend/    # Frontend application (React + TypeScript + Vite)
+└── backend/    # Backend service (Node.js + Express + TypeScript)
 ```
 
 ## 🎯 Frontend Application
@@ -68,7 +68,7 @@ For comprehensive documentation covering both frontend and backend components, i
 ### Backend Setup
 1. Navigate to backend directory:
 ```bash
-cd complaints-be
+cd frontend
 ```
 
 2. Install dependencies:
@@ -85,12 +85,14 @@ cp .env.example .env
 4. Start development server:
 ```bash
 npm run dev
+```bash
+npm run dev
 ```
 
 ### Frontend Setup
 1. Navigate to frontend directory:
 ```bash
-cd complaints-fe
+cd frontend
 ```
 
 2. Install dependencies:
@@ -112,8 +114,8 @@ npm run dev
 ## 📞 Contact
 
 For support, feature requests, or collaboration:
-- **Email**: [princeelysee@gmail.com](mailto:princeelysee@gmail.com)
-- **LinkedIn**: [/in/nishimweprince](https://www.linkedin.com/in/nishimweprince/)
+<!-- - **Email**: [princeelysee@gmail.com](mailto:princeelysee@gmail.com)
+- **LinkedIn**: [/in/nishimweprince](https://www.linkedin.com/in/nishimweprince/) -->
 
 ## 📄 License
 
