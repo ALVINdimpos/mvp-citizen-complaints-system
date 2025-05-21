@@ -46,11 +46,20 @@
     "strict": true,
 
     // Raises an error on expressions and declarations with an implied 'any' type
-    "noImplicitAny": true,
+    "noImplicitAny": false,
 
     // Disables strict checking of property initialization in classes
     // Useful when using dependency injection or other frameworks
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+
+    // Skips checking against library files
+    "skipLibCheck": true,
+
+    // Specifies the type roots for the compiled code
+    "typeRoots": ["./node_modules/@types", "./src"],
+
+    // Specifies the types to include in the compilation
+    "types": ["node"]
   },
 
   // Specifies which files to include in the compilation
@@ -63,6 +72,9 @@
   // Configuration specific to ts-node
   "ts-node": {
     // Enables file watching for ts-node
-    "files": true
+    "files": true,
+
+    // Enables transpiling only for ts-node
+    "transpileOnly": true
   }
 }

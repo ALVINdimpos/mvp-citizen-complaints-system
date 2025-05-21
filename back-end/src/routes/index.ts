@@ -1,10 +1,10 @@
-import { Router } from 'express';
-import authRoutes from './auth.routes';
-import categoryRoutes from './category.routes';
-import institutionRoutes from './institution.routes';
-import ticketRoutes from './ticket.routes';
-import ticketMessageRoutes from './ticketMessage.routes';
-import auditLogRoutes from './auditLog.routes';
+import { Router } from "express";
+import authRoutes from "./auth.routes";
+import categoryRoutes from "./category.routes";
+import institutionRoutes from "./institution.routes";
+import ticketRoutes from "./ticket.routes";
+import ticketMessageRoutes from "./ticketMessage.routes";
+import auditLogRoutes from "./auditLog.routes";
 import dashboardRoutes from './dashboard.routes';
 
 const router = Router();

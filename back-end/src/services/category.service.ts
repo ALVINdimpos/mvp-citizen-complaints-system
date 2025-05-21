@@ -3,7 +3,7 @@ import { FindOptionsWhere, ILike, Repository } from "typeorm";
 import { AppDataSource } from "../data-source";
 import { Category } from "../entities/category.entity";
 import { NotFoundError } from "../helpers/errors.helper";
-import { UUID } from "../types";
+import { UUID } from "../types/index";
 import { AuditDelete, AuditUpdate } from "../decorators/auditLog.decorator";
 import { AuditLogEntityTypes } from "../constants/auditLog.constants";
 

@@ -4,9 +4,10 @@
   "description": "Backend for Citizen Complaints and Engagement System",
   "main": "src/server.ts",
   "scripts": {
-    "build": "npm install && tsc",
+    "prebuild": "npm install",
+    "build": "npm i && tsc",
     "dev": "nodemon --exec ts-node ./src/server.ts",
-    "start": "node ./dist/server.js"
+    "start": "node dist/server.js"
   },
   "keywords": [
     "complaint"
@@ -24,6 +25,7 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "moment": "^2.30.1",
+    "morgan": "^1.10.0",
     "pg": "^8.16.0",
     "typeorm": "^0.3.24",
     "winston": "^3.17.0"
@@ -35,7 +37,6 @@
     "@types/jsonwebtoken": "^9.0.9",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.14.0",
-    "morgan": "^1.10.0",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
