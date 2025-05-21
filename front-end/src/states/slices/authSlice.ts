@@ -10,10 +10,26 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  user: (await localStorageAdapter.getItem("user")) || undefined,
-  token: (await localStorageAdapter.getItem("token")) || undefined,
-  permissions: (await localStorageAdapter.getItem("permissions")) || [],
+  user: undefined,
+  token: undefined,
+  permissions: [],
 };
+
+// Initialize state from localStorage
+const initializeState = async () => {
+  const user = (await localStorageAdapter.getItem("user")) as User | null;
+  const token = (await localStorageAdapter.getItem("token")) as string | null;
+  const permissions = (await localStorageAdapter.getItem("permissions")) as
+    | PermissionNames[]
+    | null;
+
+  if (user) initialState.user = user;
+  if (token) initialState.token = token;
+  if (permissions) initialState.permissions = permissions;
+};
+
+// Call initialization
+initializeState();
 
 const authSlice = createSlice({
   name: "auth",
