@@ -30,7 +30,7 @@ const PublicNavbar = () => {
             to="/"
             className="text-blue-800 text-2xl font-extrabold tracking-tight"
           >
-            CivicLink
+            Citizen Complaints System
           </Link>
 
           <div className="hidden sm:flex gap-6">
@@ -47,7 +47,7 @@ const PublicNavbar = () => {
 
           <div className="flex items-center gap-4">
             <Link
-              to="/report/create"
+              to="/auth/login"
               className="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700 transition"
             >
               Report Now

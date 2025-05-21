@@ -1,8 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import PublicNavbar from "@/containers/navigation/PublicNavbar";
+import { useNavigate } from "react-router-dom";
+import CitizenComplaint from "@public/citizen.jpg";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
   return (
     <main className="bg-sky-50 min-h-screen text-gray-900">
       <PublicNavbar />
@@ -18,12 +22,21 @@ const LandingPage = () => {
               Streamlining how citizens connect with public institutions. Fast,
               accountable, and transparent.
             </p>
-            <Button className="bg-white text-blue-600 hover:bg-blue-100 font-semibold">
+            <Button
+              className="bg-white text-blue-600 hover:bg-blue-100 font-semibold"
+              onClick={() => navigate("/auth/login")}
+            >
               Start a Report
             </Button>
           </div>
           <div className="md:w-1/2">
-            <div className="aspect-video bg-blue-300 rounded-lg shadow-md"></div>
+            <div className="aspect-video bg-blue-300 rounded-lg shadow-md">
+              <img
+                src={CitizenComplaint}
+                alt="Citizen Complaint"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -84,7 +97,10 @@ const LandingPage = () => {
             We're here to ensure your voice is heard. Connect with the right
             people now.
           </p>
-          <Button className="bg-white text-blue-700 font-semibold hover:bg-blue-100">
+          <Button
+            className="bg-white text-blue-700 font-semibold hover:bg-blue-100"
+            onClick={() => navigate("/auth/login")}
+          >
             Submit a Complaint
           </Button>
         </div>
