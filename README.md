@@ -5,8 +5,8 @@
 A full-stack application for managing citizen complaints and engagement, featuring AI-powered ticket routing, real-time analytics, and comprehensive audit logging.
 
 ## 📱 Live Demo
-- **Live URL**: [https://mvp-citizen-complaints-system.vercel.app/)
-- **Technical Documentation**: [Citizen Complaints and Engagement System](https://deepwiki.com/ALVINdimpos/mvp-citizen-complaints-system/1-overview) -->
+- **Live URL**: [mvp-citizen-complaints-system](https://mvp-citizen-complaints-system.vercel.app/)
+- **Technical Documentation**: [Citizen Complaints and Engagement System](https://deepwiki.com/ALVINdimpos/mvp-citizen-complaints-system/1-overview) 
 
 ## 🏗️ Project Structure
 
