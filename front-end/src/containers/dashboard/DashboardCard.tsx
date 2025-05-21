@@ -1,3 +1,4 @@
+// Redesigned DashboardCard – Unique Look
 import { SkeletonLoader } from "@/components/inputs/Loader";
 import { getStatusBackgroundColor } from "@/helpers/strings.helper";
 import { MouseEventHandler } from "react";
@@ -15,16 +16,16 @@ export const DashboardCard: React.FC<DashboardCardProps> = ({
   label,
   value,
   onActionClick,
-  actionLabel = 'View Details',
+  actionLabel = "Explore",
   isLoading = false,
 }) => {
   return (
-    <article className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
-      <header className="mb-4">
-        <h3 className="text-gray-600 text-sm font-medium uppercase tracking-wider m-0">
+    <article className="bg-[#fff0f3] border border-[#ffb4a2] rounded-lg px-5 py-6 shadow-sm hover:shadow-lg transition-transform transform hover:-translate-y-1">
+      <header className="mb-3">
+        <h3 className="text-[#9c6644] text-xs font-semibold tracking-wide uppercase">
           {label}
         </h3>
-        <p className="text-gray-900 text-3xl font-semibold my-2">
+        <p className="text-[#3d405b] text-4xl font-bold mt-1">
           {isLoading ? (
             <SkeletonLoader className="w-full h-4" type="text" />
           ) : (
@@ -34,14 +35,11 @@ export const DashboardCard: React.FC<DashboardCardProps> = ({
       </header>
       {onActionClick && (
         <Link
-          to={`#`}
+          to="#"
           onClick={onActionClick}
-          type="Link"
-          className={`${getStatusBackgroundColor(
+          className={`mt-4 inline-block ${getStatusBackgroundColor(
             label
-          )} text-white px-4 py-2 rounded-md text-sm font-medium
-            focus:outline-none focus:ring-2 focus:ring-offset-2
-            transition-colors duration-200`}
+          )} text-white text-sm font-semibold px-4 py-2 rounded-full shadow-md hover:shadow-lg transition duration-200`}
         >
           {actionLabel}
         </Link>

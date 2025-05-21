@@ -40,7 +40,7 @@ const InstitutionsPage = () => {
   }, [fetchInstitutions, page, size, createInstitutionModal]);
 
   const { institutionColumns } = useInstitutionColumns();
-
+  console.log(institutionsList);
   return (
     <AppLayout>
       <main className="w-full flex flex-col gap-6">

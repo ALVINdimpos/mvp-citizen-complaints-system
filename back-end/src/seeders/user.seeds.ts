@@ -9,22 +9,27 @@ const userRoleService = new UserRoleService();
 const roleService = new RoleService();
 
 export const seedUsers = async () => {
-  // CREATE SUPER ADMIN USER
-  const superAdminUser = await userService.createUserByEmail({
-    email: "admin@complaints.rw",
-    password: "Complaints@123",
-  });
-
-  // GET SUPER ADMIN ROLE
-  const superAdminRole = await roleService.getRoleByName("SUPER_ADMIN");
-
-  if (superAdminRole) {
-    // ASSIGN SUPER ADMIN ROLE TO USER
-    await userRoleService.createUserRole({
-      userId: superAdminUser?.id,
-      roleId: superAdminRole?.id,
+  try {
+    // CREATE SUPER ADMIN USER
+    const superAdminUser = await userService.createUserByEmail({
+      email: "admin@complaints.rw",
+      password: "Complaints@123",
     });
-  }
 
-  logger.info(`Users seeded successfully`);
+    // GET SUPER ADMIN ROLE
+    const superAdminRole = await roleService.getRoleByName("SUPER_ADMIN");
+
+    if (superAdminRole) {
+      // ASSIGN SUPER ADMIN ROLE TO USER
+      await userRoleService.createUserRole({
+        userId: superAdminUser?.id,
+        roleId: superAdminRole?.id,
+      });
+    }
+
+    logger.info(`Users seeded successfully`);
+  } catch (error: any) {
+    logger.error(`Error seeding users: ${error?.message || "Unknown error"}`);
+    throw error;
+  }
 };

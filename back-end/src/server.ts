@@ -18,7 +18,7 @@ if (cluster.isPrimary) {
   });
 } else {
   import("./app").then(({ default: app }) => {
-    const { PORT = 8080, DB_NAME } = process.env;
+    const { PORT = 8080 } = process.env;
     app.listen(PORT, () => {
       logger.success(`Worker ${process.pid} started on port ${PORT}`);
     });

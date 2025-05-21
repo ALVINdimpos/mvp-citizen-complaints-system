@@ -7,7 +7,7 @@ A full-stack application for managing citizen complaints and engagement, featuri
 ## 📱 Live Demo
 <!-- - **Live URL**: [https://complaints.basis.rw](https://complaints.basis.rw)
 - **Demo Video**: [Google Drive](https://drive.google.com/drive/folders/1xUkTTlyH-oFf-LHbOszWEDcDhyo1Oh2P?usp=sharing)
-- **Technical Documentation**: [Citizen Complaints and Engagement System](https://deepwiki.com/nishimweprince/complaints) -->
+- **Technical Documentation**: [Citizen Complaints and Engagement System](https://deepwiki.com/nishi/complaints) -->
 
 ## 🏗️ Project Structure
 
@@ -61,7 +61,7 @@ A robust RESTful API service built with Node.js and Express, providing secure an
 
 ## 📚 Documentation
 
-For comprehensive documentation covering both frontend and backend components, including setup guides, API references, and deployment instructions, please refer to our [Project Documentation](https://deepwiki.com/nishimweprince/complaints).
+For comprehensive documentation covering both frontend and backend components, including setup guides, API references, and deployment instructions, please refer to our [Project Documentation](https://deepwiki.com/fistonalvin/complaints).
 
 ## 🚀 Getting Started
 
@@ -114,8 +114,8 @@ npm run dev
 ## 📞 Contact
 
 For support, feature requests, or collaboration:
-<!-- - **Email**: [princeelysee@gmail.com](mailto:princeelysee@gmail.com)
-- **LinkedIn**: [/in/nishimweprince](https://www.linkedin.com/in/nishimweprince/) -->
+- **Email**: [fistonalvin@gmail.com](mailto:fistonalvin@gmail.com)
+- **LinkedIn**: [/in/fistonalvin](https://www.linkedin.com/in/fistonalvin/)
 
 ## 📄 License
 

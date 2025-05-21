@@ -1,20 +1,20 @@
-import Modal from '@/components/cards/Modal';
-import Button from '@/components/inputs/Button';
-import { InputErrorMessage } from '@/components/inputs/ErrorLabels';
-import Input from '@/components/inputs/Input';
-import { SkeletonLoader } from '@/components/inputs/Loader';
-import TextArea from '@/components/inputs/TextArea';
-import { Heading } from '@/components/inputs/TextInputs';
-import { capitalizeString } from '@/helpers/strings.helper';
-import validateInputs from '@/helpers/validations.helper';
-import { useAppDispatch, useAppSelector } from '@/states/hooks';
-import { setCreateInstitutionModal } from '@/states/slices/institutionSlice';
-import { useFetchCategories } from '@/usecases/categories/category.hooks';
-import { useCreateInstitution } from '@/usecases/institutions/institution.hooks';
-import { useCallback, useEffect, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import { toast } from 'sonner';
+import Modal from "@/components/cards/Modal";
+import Button from "@/components/inputs/Button";
+import { InputErrorMessage } from "@/components/inputs/ErrorLabels";
+import Input from "@/components/inputs/Input";
+import { SkeletonLoader } from "@/components/inputs/Loader";
+import TextArea from "@/components/inputs/TextArea";
+import { Heading } from "@/components/inputs/TextInputs";
+import { capitalizeString } from "@/helpers/strings.helper";
+import validateInputs from "@/helpers/validations.helper";
+import { useAppDispatch, useAppSelector } from "@/states/hooks";
+import { setCreateInstitutionModal } from "@/states/slices/institutionSlice";
+import { useFetchCategories } from "@/usecases/categories/category.hooks";
+import { useCreateInstitution } from "@/usecases/institutions/institution.hooks";
+import { useCallback, useEffect, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { toast } from "sonner";
 
 const CreateInstitution = () => {
   /**
@@ -38,7 +38,7 @@ const CreateInstitution = () => {
   // FETCH CATEGORIES
   useEffect(() => {
     if (createInstitutionModal) {
-      fetchCategories({ searchQuery: '' });
+      fetchCategories({ searchQuery: "" });
     }
   }, [fetchCategories, createInstitutionModal]);
 
@@ -57,12 +57,12 @@ const CreateInstitution = () => {
   // HANDLE FORM SUBMISSION
   const onSubmit = handleSubmit((data) => {
     if (selectedCategories.length === 0) {
-      setError('categories', {
-        message: 'Please select at least one category',
+      setError("categories", {
+        message: "Please select at least one category",
       });
       return;
     } else {
-      clearErrors('categories');
+      clearErrors("categories");
     }
 
     createInstitution({
@@ -81,20 +81,19 @@ const CreateInstitution = () => {
   const closeModal = useCallback(() => {
     dispatch(setCreateInstitutionModal(false));
     reset({
-      name: '',
-      description: '',
-      email: '',
+      name: "",
+      description: "",
+      email: "",
     });
     setSelectedCategories([]);
   }, [dispatch, reset, setSelectedCategories]);
 
   useEffect(() => {
     if (createInstitutionIsSuccess) {
-      toast.success('Institution created successfully');
+      toast.success("Institution created successfully");
       closeModal();
     }
   }, [createInstitutionIsSuccess, closeModal]);
-
   return (
     <Modal
       isOpen={createInstitutionModal}
@@ -145,39 +144,42 @@ const CreateInstitution = () => {
           <menu className="w-full flex flex-col gap-3">
             <Heading type="h4">Select categories</Heading>
             <ul className="w-full grid grid-cols-3 gap-3 justify-between">
-              {categoriesList.map((category, index) => {
-                const isSelected = selectedCategories.includes(category?.name);
-                return (
-                  <Link
-                    to={`#`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (isSelected) {
-                        setSelectedCategories(
-                          selectedCategories.filter((c) => c !== category?.name)
-                        );
-                        clearErrors('categories');
-                      } else {
-                        setSelectedCategories([
-                          ...selectedCategories,
-                          category?.name,
-                        ]);
-                      }
-                    }}
-                    key={index}
-                    className={`w-full p-1 px-3 rounded-md text-[12px] text-center ${
-                      isSelected
-                        ? 'bg-green-700 text-white'
-                        : 'bg-background text-black shadow-sm'
-                    }`}
-                  >
-                    {capitalizeString(category?.name)}
-                  </Link>
-                );
-              })}
+              {[...new Set(categoriesList.map((c) => c?.name))].map(
+                (uniqueName, index) => {
+                  const isSelected = selectedCategories.includes(uniqueName);
+                  return (
+                    <Link
+                      to="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (isSelected) {
+                          setSelectedCategories(
+                            selectedCategories.filter((c) => c !== uniqueName)
+                          );
+                          clearErrors("categories");
+                        } else {
+                          setSelectedCategories([
+                            ...selectedCategories,
+                            uniqueName,
+                          ]);
+                        }
+                      }}
+                      key={index}
+                      className={`w-full p-1 px-3 rounded-md text-[12px] text-center ${
+                        isSelected
+                          ? "bg-green-700 text-white"
+                          : "bg-background text-black shadow-sm"
+                      }`}
+                    >
+                      {capitalizeString(uniqueName)}
+                    </Link>
+                  );
+                }
+              )}
             </ul>
           </menu>
         )}
+
         {errors.categories && (
           <InputErrorMessage
             message={errors.categories.message}
@@ -194,7 +196,7 @@ const CreateInstitution = () => {
                 required: `Please provide the email of the admin`,
                 validate: (value) => {
                   return (
-                    validateInputs(value, 'email') || 'Invalid email address'
+                    validateInputs(value, "email") || "Invalid email address"
                   );
                 },
               }}

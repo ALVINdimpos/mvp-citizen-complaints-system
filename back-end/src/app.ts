@@ -24,7 +24,7 @@ app.use(errorHandler);
 // DATABASE CONNECTION
 AppDataSource.initialize()
   .then(async () => {
-    logger.success(`${process.env.DB_NAME} connected`);
+    logger.success(`${process.env.DB_URL} connected`);
     // SEED DATA
     await seed();
     logger.success("Seeded successfully");

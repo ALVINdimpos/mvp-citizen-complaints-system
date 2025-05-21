@@ -9,24 +9,36 @@ const permissionsService = new PermissionsService();
 const rolePermissionService = new RolePermissionService();
 
 export const seedRoles = async () => {
-  // CREATE SUPER ADMIN ROLE
-  const superAdminRole = await roleService.createRole({
-    name: "SUPER_ADMIN",
-    description: "Super admin role",
-  });
+  try {
+    // CHECK IF SUPER ADMIN ROLE EXISTS
+    let superAdminRole = await roleService.getRoleByName("SUPER_ADMIN");
 
-  // ASSIGN IT ALL PERMISSIONS
-  const { rows: permissionsList } = await permissionsService.fetchPermissions({
-    page: 0,
-    size: 1000,
-    condition: {},
-  });
+    // CREATE SUPER ADMIN ROLE IF IT DOESN'T EXIST
+    if (!superAdminRole) {
+      superAdminRole = await roleService.createRole({
+        name: "SUPER_ADMIN",
+        description: "Super admin role",
+      });
+    }
 
-  // ASSIGN PERMISSIONS TO ROLE
-  await rolePermissionService.assignPermissionsToRole({
-    roleId: superAdminRole?.id,
-    permissions: permissionsList.map((permission) => permission?.id),
-  });
+    // ASSIGN IT ALL PERMISSIONS
+    const { rows: permissionsList } = await permissionsService.fetchPermissions(
+      {
+        page: 0,
+        size: 1000,
+        condition: {},
+      }
+    );
 
-  logger.info(`Roles seeded successfully`);
+    // ASSIGN PERMISSIONS TO ROLE
+    await rolePermissionService.assignPermissionsToRole({
+      roleId: superAdminRole?.id,
+      permissions: permissionsList.map((permission) => permission?.id),
+    });
+
+    logger.info(`Roles seeded successfully`);
+  } catch (error: any) {
+    logger.error(`Error seeding roles: ${error?.message || "Unknown error"}`);
+    throw error;
+  }
 };
