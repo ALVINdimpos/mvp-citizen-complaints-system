@@ -4,13 +4,15 @@
   "description": "Backend for Citizen Complaints and Engagement System",
   "main": "src/server.ts",
   "scripts": {
-    "prebuild": "npm install",
-    "build": "npm i && tsc",
     "dev": "nodemon --exec ts-node ./src/server.ts",
+    "build": "tsc",
     "start": "node dist/server.js"
   },
   "keywords": [
-    "complaint"
+    "complaint",
+    "citizen",
+    "engagement",
+    "system"
   ],
   "author": "Niyigena Fiston Alvin",
   "license": "ISC",
