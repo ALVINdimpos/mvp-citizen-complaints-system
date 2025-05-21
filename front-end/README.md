@@ -57,8 +57,8 @@ interface DashboardMetrics {
 1. **Clone and Install**
    ```bash
    # Clone the repository
-   git clone [repository-url]
-   cd complaints-fe
+   git clone https://github.com/ALVINdimpos/mvp-citizen-complaints-system.git
+   cd front-end
 
    # Install dependencies
    npm install

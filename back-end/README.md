@@ -54,8 +54,8 @@ NODE_ENV=development
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd complaints-be
+git clone https://github.com/ALVINdimpos/mvp-citizen-complaints-system.git
+cd back-end
 ```
 
 2. Install dependencies:

@@ -1,20 +1,19 @@
 # mvp-citizen-complaints-system
 
-<!-- [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/nishimweprince/complaints) -->
+<!-- [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ALVINdimpos/mvp-citizen-complaints-system/1-overview) -->
 
 A full-stack application for managing citizen complaints and engagement, featuring AI-powered ticket routing, real-time analytics, and comprehensive audit logging.
 
 ## 📱 Live Demo
-<!-- - **Live URL**: [https://complaints.basis.rw](https://complaints.basis.rw)
-- **Demo Video**: [Google Drive](https://drive.google.com/drive/folders/1xUkTTlyH-oFf-LHbOszWEDcDhyo1Oh2P?usp=sharing)
-- **Technical Documentation**: [Citizen Complaints and Engagement System](https://deepwiki.com/nishi/complaints) -->
+- **Live URL**: [https://mvp-citizen-complaints-system.vercel.app/)
+- **Technical Documentation**: [Citizen Complaints and Engagement System](https://deepwiki.com/ALVINdimpos/mvp-citizen-complaints-system/1-overview) -->
 
 ## 🏗️ Project Structure
 
 ```
 mvp-citizen-complaints-system/
-├── frontend/    # Frontend application (React + TypeScript + Vite)
-└── backend/    # Backend service (Node.js + Express + TypeScript)
+├── front-end/    # Frontend application (React + TypeScript + Vite)
+└── back-end/    # Backend service (Node.js + Express + TypeScript)
 ```
 
 ## 🎯 Frontend Application
@@ -68,7 +67,7 @@ For comprehensive documentation covering both frontend and backend components, i
 ### Backend Setup
 1. Navigate to backend directory:
 ```bash
-cd frontend
+cd back-end
 ```
 
 2. Install dependencies:
@@ -92,7 +91,7 @@ npm run dev
 ### Frontend Setup
 1. Navigate to frontend directory:
 ```bash
-cd frontend
+cd front-end
 ```
 
 2. Install dependencies:
