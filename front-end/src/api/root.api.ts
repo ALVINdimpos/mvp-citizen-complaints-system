@@ -15,4 +15,6 @@ const prepareHeaders = async (headers: Headers) => {
 export const baseQuery = fetchBaseQuery({
   baseUrl: environment.apiUrl,
   prepareHeaders,
+  credentials: "include",
+  mode: "cors",
 });

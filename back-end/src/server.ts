@@ -18,9 +18,11 @@ if (cluster.isPrimary) {
   });
 } else {
   import("./app").then(({ default: app }) => {
-    const { PORT = 8080 } = process.env;
-    app.listen(PORT, () => {
-      logger.success(`Worker ${process.pid} started on port ${PORT}`);
+    const PORT = parseInt(process.env.PORT || "8080", 10);
+    const HOST = process.env.HOST || "0.0.0.0";
+
+    app.listen(PORT, HOST, () => {
+      logger.success(`Worker ${process.pid} started on ${HOST}:${PORT}`);
     });
   });
 }
